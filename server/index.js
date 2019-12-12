@@ -12,17 +12,16 @@ app.use(express.static('dist'));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../dist/views/index.html')));
 
 app.get('/products', (req, res) => {
-        if (req.query.potion) {
-            let potionNameResult = jsonData.potions.filter(d => d.name.toLowerCase().includes(req.query.potion.toLowerCase()));
-            res.send(potionNameResult);
-        } else if (req.query.level) {
-            let potionLevelResult = jsonData.potions.filter(d => d.required_level == req.query.level);
-            res.send(potionLevelResult);
-        } else if (req.query.order) {
-            let orderedResult = orderBy(req.query.order);
-            res.send(orderedResult);
+        let filteredData;
+
+        if (req.query.order) {
+            filteredData = orderBy(req.query.order);
+            filteredData = filteredData.filter(d => ((req.query.potion ? d.name.toLowerCase().includes(req.query.potion.toLowerCase()) : 1) && (req.query.level ? req.query.level == d.required_level : 1)));
+        } else {
+            filteredData = jsonData.potions.filter(d => ((req.query.potion ? d.name.toLowerCase().includes(req.query.potion.toLowerCase()) : 1) && (req.query.level ? req.query.level == d.required_level : 1)));
         }
-        res.send(jsonData.potions);
+
+        res.send(filteredData);
     }
 );
 app.get('/products/price/:minPrice/:maxPrice', (req, res) => {
