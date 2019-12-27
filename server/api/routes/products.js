@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
     let maxPrice = req.query.maxPrice ? req.query.maxPrice : 0;
 
     /** In case the minPrice & the maxPrice are 0 then set the max range between them 0-4000*/
-    if(minPrice == 0 && maxPrice == 0){
+    if (minPrice == 0 && maxPrice == 0) {
         minPrice = 0;
         maxPrice = 4000;
     }
@@ -23,11 +23,17 @@ router.get('/', function (req, res) {
 
     filteredData = filteredData.filter(d => (
         (
+            /** If the potion query parameter (potion name) is set check if there is a potion with the passed value,
+             * if it's not set then set the flag in the filter to true so it would get all potions
+             * */
             req.query.potion ?
                 d.name.toLowerCase().includes(req.query.potion.toLowerCase()) :
-                1 //
+                1
         ) &&
         (
+            /** If the level query parameter is set check if there is a required_level with the passed value,
+             * if it's not set then set the flag in the filter to true so it would get all potions
+             * */
             req.query.level ?
                 req.query.level == d.required_level :
                 1
