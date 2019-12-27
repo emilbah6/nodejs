@@ -29,7 +29,6 @@ class FetchData {
         fetch(`${apiProductsURL}?order=${order}&potion=${potion}&level=${level}&minPrice=${minPrice}&maxPrice=${maxPrice}`)
             .then(response => response.json())
             .then(data => helpers.drawData(data, container));
-
     }
 }
 

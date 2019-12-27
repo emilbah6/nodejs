@@ -3,7 +3,7 @@ module.exports = {
 
         let colElements = '';
 
-        if (data.length){
+        if (data.length) {
             data.forEach(element => {
 
                 /** Destructuring the element object for the necessary fields */
@@ -26,9 +26,7 @@ module.exports = {
                 </div>
             </article>`;
             });
-
-        }
-        else{
+        } else {
             colElements = "<h4>There are no potions based on your filters!</h4>";
         }
 
