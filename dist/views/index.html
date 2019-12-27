@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Checkout Our Potions</title>
 </head>
 <body>
-<h1>NodeJS Test</h1>
-<div class="filter-container">
-    <div class="form-inline">
-        <label for="order-by">Order By</label>
-        <select name="" id="order-by">
-            <option selected disabled value=""></option>
-            <option value="name">Alphabet</option>
-            <option value="tags">Tags</option>
-            <option value="price">Price</option>
-            <option value="required_level">Required Level</option>
-        </select>
-        <label for="filter-by-level">Filter By Required Level</label>
-        <select id="filter-by-level">
-            <option selected disabled></option>
-            <option value="0">0</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-        </select>
-        <label for="potion">Potion:</label>
-        <input type="text" value="" id="potion" placeholder="Search potion">
-        <label for="">Price:</label>
-        <input type="number" step="10" value="0" id="min-price" min="0" max="4000" placeholder="Min">
-        <input type="number" step="10" value="0" id="max-price" min="0" max="4000" placeholder="Max">
+<header>
+    <h1>Checkout Our Potions</h1>
+    <div class="filter-container">
+        <div class="form-inline">
+            <label for="order-by">Order By</label>
+            <select name="" id="order-by">
+                <option selected disabled value=""></option>
+                <option value="name">Alphabet</option>
+                <option value="tags">Tags</option>
+                <option value="price">Price</option>
+                <option value="required_level">Required Level</option>
+            </select>
+            <label for="filter-by-level">Filter By Required Level</label>
+            <select id="filter-by-level">
+                <option selected disabled></option>
+                <option value="0">0</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+            </select>
+            <label for="potion">Potion:</label>
+            <input type="text" value="" id="potion" placeholder="Search potion">
+            <label for="">Price:</label>
+            <input type="number" step="10" value="0" id="min-price" min="0" max="4000" placeholder="Min">
+            <input type="number" step="10" value="0" id="max-price" min="0" max="4000" placeholder="Max">
+        </div>
     </div>
 
-</div>
-<div class="container" id="potions-result">
-</div>
-
+</header>
+<main class="container" id="potions-result">
+</main>
+<footer>
+    Made By Emil Bah
+</footer>
 <script src="../js/app.js"></script>
 </body>
 </html>
