@@ -30,7 +30,6 @@ module.exports = {
             colElements = "<h4>There are no potions based on your filters!</h4>";
         }
 
-
         container.innerHTML = colElements;
     },
 
